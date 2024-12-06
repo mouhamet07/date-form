@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planifier une Sortie</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Planifie notre prochaine sortie !</h1>
+        
+        <!-- Étape 1 : Choisir la date et l'heure -->
+        <div id="step-1" class="step">
+            <h2>1. Choisis une date et une heure</h2>
+            <input type="date" id="date" />
+            <input type="time" id="time" />
+            <button class="next-btn" onclick="nextStep(2)">Suivant</button>
+        </div>
+
+        <!-- Étape 2 : Choisir une activité -->
+        <div id="step-2" class="step hidden">
+            <h2>2. Choisis une activité</h2>
+            <div class="options">
+                <button onclick="selectActivity('Cinéma')">
+                    <img src="https://media.gqmagazine.fr/photos/603e6a8da9360b0585bcbc6a/1:1/w_2345,h_2345,c_limit/108387402" alt="Cinéma">
+                    <p>Cinéma</p>
+                </button>
+                <button onclick="selectActivity('Balade')">
+                    <img src="https://www.tourisme-en-hautsdefrance.com/app/uploads/crt-hautsdefrance/2020/12/thumbs/noyon-marche-dans-la-campagne-crt-hauts-de-france-nicolas-bryant-640x640.jpg" alt="Balade">
+                    <p>Balade</p>
+                </button>
+                <button onclick="selectActivity('Restaurant')">
+                    <img src="https://media.istockphoto.com/id/522645617/fr/photo/verres-vides-dans-restaurant.jpg?s=612x612&w=0&k=20&c=GWlw7OGsEsHk3CZGlucEHUREOK-l_wZwLvcDIKI_9r8=" alt="Restaurant">
+                    <p>Restaurant</p>
+                </button>
+            </div>
+            <button class="next-btn" onclick="nextStep(3)">Suivant</button>
+        </div>
+
+        <!-- Étape 3 : Choisir un lieu -->
+        <div id="step-3" class="step hidden">
+            <h2>3. Choisis un lieu</h2>
+            <div id="location-options" class="options">
+                <!-- Les lieux seront générés dynamiquement -->
+            </div>
+            <button class="next-btn" onclick="nextStep(4)">Suivant</button>
+        </div>
+
+        <!-- Étape 4 : Choisir un repas -->
+        <div id="step-4" class="step hidden">
+            <h2>4. Choisis un repas</h2>
+            <div class="options">
+                <button onclick="selectMeal('Sucrée')">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFglaH0GNf-xJLW8lj1m3w5z9SG88pcJ6z0w&s" alt="Pizza">
+                    <p>Sucrée</p>
+                </button>
+                <button onclick="selectMeal('Salée')">
+                    <img src="https://img.cuisineaz.com/660x660/2019/04/17/i146583-tacos-poulet-curry.jpeg" alt="Burger">
+                    <p>Salée</p>
+                </button>
+                <button onclick="selectMeal('Cocktails & Divers')">
+                    <img src="https://www.1001cocktails.com/wp-content/uploads/1001cocktails/2018/06/shutterstock_2181241651-768x512.jpg" alt="Sushi">
+                    <p>Cocktails & Divers</p>
+                </button>
+                <button onclick="selectMeal('Me')">
+                    <img src="WhatsApp Image 2024-12-06 à 20.41.44_f42af8bf.jpg" alt="Sushi">
+                    <p>Me</p>
+                </button>
+            </div>
+            <button class="next-btn" onclick="showSummary()">Voir le Résumé</button>
+        </div>
+
+        <!-- Résumé -->
+        <div id="step-5" class="step hidden">
+            <h2>Résumé de nos choix</h2>
+            <p id="summary-text" class="summary-text"></p> <!-- Ajout du 'id="summary-text" -->
+        </div>
+    </div>
+
+    <script src="scriptt.js"></script>
+</body>
+</html>
