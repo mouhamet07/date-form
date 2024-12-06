@@ -81,3 +81,17 @@ function showSummary() {
     document.getElementById('summary-text').innerHTML = summaryText;
     nextStep(5); // Étape 5 correspond au résumé
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Générer des cœurs flottants
+    const numberOfHearts = 500;  // Vous pouvez ajuster ce nombre
+    const container = document.body;
+
+    for (let i = 0; i < numberOfHearts; i++) {
+        const heart = document.createElement('i');
+        heart.classList.add('fas', 'fa-heart', 'heart');
+        container.appendChild(heart);
+    }
+});
+
